@@ -1,0 +1,52 @@
+body{
+    background-color: #b0edfe;
+    margin: 0;
+    
+}
+
+h1{
+    height: 10vh;
+    width: 100vw;
+    margin:0;
+    
+    background-color: #53cdfa;
+    text-align: center;
+}
+.inicio{
+    margin: 0;
+}
+
+section{
+    height: 400px;
+    width: 80vw;
+    margin: auto;
+    background-color: #cdedf8;
+    border-radius: 5%;
+    font-family: sans-serif;
+}
+li{
+    text-align: justify;
+}
+.titulo{
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+table{
+    border: 1px solid;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+tr,td{
+    border-spacing: 0;
+    border:1px solid
+}
+
+
+.informacion{
+    justify-content: center;
+}

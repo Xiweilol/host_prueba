@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro deportistas</title>
+    <style>
+        /* Estilo del cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; /* Fuente de texto */
+            background-color: #f5f5f5; /* Color de fondo */
+            margin: 20px; /* Espacio exterior */
+        }
+        /* Contenedor principal */
+        .container {
+            max-width: 800px; /* Ancho máximo */
+            margin: 0 auto; /* Centrar horizontalmente */
+            padding: 20px; /* Espacio interior */
+            background-color: #fff; /* Color de fondo */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            border-radius: 8px; /* Bordes redondeados */
+        }
+        /* Estilo del título principal */
+        h1 {
+            text-align: center; /* Centrar el texto */
+            color: #333; /* Color del texto */
+        }
+        /* Grupo de formulario */
+        .form-group {
+            margin-bottom: 15px; /* Espacio inferior */
+        }
+        /* Estilo para las etiquetas */
+        label {
+            display: block; /* Mostrar como bloque */
+            font-weight: bold; /* Negrita */
+        }
+        /* Estilo de cajas de texto y combo */
+        input[type="text"], select {
+            width: 100%; /* Ancho completo */
+            padding: 8px; /* Espacio interior */
+            margin-top: 5px; /* Espacio superior */
+            border: 1px solid #ccc; /* Borde */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        /* Estilo de la tabla */
+        table {
+            width: 100%; /* Ancho completo */
+            border-collapse: collapse; /* Colapsar bordes */
+            margin-top: 20px; /* Espacio superior */
+        }
+        /* Bordes de la tabla */
+        table, th, td {
+            border: 1px solid #ddd; /* Borde de las celdas */
+        }
+        /* Espacio interior de celdas */
+        th, td {
+            padding: 10px; /* Espacio interior */
+            text-align: center; /* Centrar el texto */
+        }
+        /* Estilo de los encabezados de tabla */
+        th {
+            background-color: #f2f2f2; /* Color de fondo */
+        }
+        /* Estilo del botón */
+        .btn {
+            display: inline-block; /* Mostrar como bloque en línea */
+            padding: 10px 20px; /* Espacio interior */
+            font-size: 16px; /* Tamaño de fuente */
+            text-align: center; /* Centrar el texto */
+            color: #fff; /* Color del texto */
+            background-color: #007bff; /* Color de fondo */
+            border: none; /* Sin borde */
+            border-radius: 4px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar */
+            margin-top: 10px; /* Espacio superior */
+        }
+        /* Cambio de color al pasar sobre el botón */
+        .btn:hover {
+            background-color: #0056b3; /* Color al pasar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ingresa datos de deportista</h1>
+        
+        <!-- Campo de texto para el nombre -->
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Ingresa tu nombre">
+        </div>
+        
+        <!-- Campo de texto para la edad -->
+        <div class="form-group">
+            <label for="age">Edad:</label>
+            <input type="text" id="age" placeholder="Ingresa tu edad">
+        </div>
+        <!--campo de texto para ingresar el sueldo mensual-->
+        <div class = "form-group">
+            <label for="sueldo_mensual">Sueldo Mensual: </label>
+            <input type="text" id = "sueldo_mensual" placeholder="ingresa su salario">
+
+        </div>
+        <!--campo de testo para ingresar el sueldo anual-->
+        <div class = "form-group">
+            <label for="sueldo_anual">Sueldo Anual: </label>
+            <input type="text" id = "sueldo_anual" placeholder="ingresa su salario">
+        </div>
+
+        <!--caja combo para seleccionar el club-->
+        <div class="form-group">
+            <label for="club">Club:</label>
+            <select id="club">
+                <option value="Chicago_Bulls">Chicago Bulls</option>
+                <option value="Cleveland_Cavaliers">Cleveland Cavaliers</option>
+                <option value="Detroit_Pistons">Detroit Pistons</option>
+                
+            </select>
+        </div>
+        <!-- Caja combo para seleccionar el país -->
+        <div class="form-group">
+            <label for="country">País:</label>
+            <select id="country">
+                <option value="México">México</option>
+                <option value="Argentina">Argentina</option>
+                <option value="España">España</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Chile">Chile</option>
+            </select>
+        </div>
+        
+        <!-- Botón para agregar datos -->
+        <button class="btn" onclick="addData()">Agregar Datos</button>
+        
+        <h2>Tabla de Datos</h2>
+        <!-- Tabla donde se mostrarán los datos ingresados -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>País</th>
+                    <th>Sueldo Mensual</th>
+                    <th>Sueldo Anual</th>
+                    <th>club</th>
+                    <th>link del club</th>
+                    <th>Total Sueldo</th> <!-- Nueva columna para mostrar el total -->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Array bidimensional que almacenará los datos ingresados
+        let data = [];
+
+        // Función para agregar datos al array y mostrarlos en la tabla
+        function addData() {
+            // Obtener valores de las cajas de texto y combo
+            const name = document.getElementById('name').value; // Obtener el nombre
+            const age = document.getElementById('age').value; // Obtener la edad
+            const country = document.getElementById('country').value; // Obtener el país seleccionado
+            //obtenemos el sueldo mensual
+            const sueldo_mensual = parseFloat(document.getElementById('sueldo_mensual').value);
+            //obtener sueldo anual
+            const sueldo_anual = parseFloat(document.getElementById('sueldo_anual').value);
+            //obtener el club
+            const club = document.getElementById('club').value;
+            //variable para almacenar el link de los clubs
+            let link = "";
+            // Validar que se hayan ingresado todos los campos
+            if (name === "" || age === "" || country === "" || isNaN(sueldo_mensual) || isNaN(sueldo_anual) || club === "") {
+                alert("Por favor, completa todos los campos."); // Mostrar mensaje si falta información
+                return; // Salir de la función si hay campos vacíos
+            }
+
+            if (club === "Chicago_Bulls"){
+                link = "https://shop.bulls.com/";
+            }
+            else if(club === "Cleveland_Cavaliers"){
+                link = "https://www.espn.com.mx/basquetbol/nba/equipo/_/nombre/cle/cleveland-cavaliers";
+            }
+            else if (club === "Detroit_Pistons"){
+                link = "https://www.espn.com.mx/basquetbol/nba/equipo/_/nombre/det/detroit-pistons";
+            }
+
+            // Calcular el total del sueldo mensual + sueldo anual
+            const total_sueldo = sueldo_mensual + sueldo_anual;
+
+            // Agregar los datos al array bidimensional
+            data.push([name, age, country, sueldo_mensual, sueldo_anual, club, link, total_sueldo]);
+
+            // Limpiar la tabla antes de llenarla de nuevo
+            const tableBody = document.querySelector("#dataTable tbody");
+            tableBody.innerHTML = ""; // Eliminar el contenido actual de la tabla
+
+            // Llenar la tabla con los datos actualizados
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach((cell, index) => {
+                    const td = document.createElement('td');
+                    if (index === 6) { // Si es la columna del link
+                        const a = document.createElement('a');
+                        a.href = cell;
+                        a.textContent = "Enlace del club";
+                        td.appendChild(a);
+                    } else {
+                        td.textContent = cell;
+                    }
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+
+            // Limpiar los campos de entrada
+            document.getElementById('name').value = ""; // Limpiar el campo de nombre
+            document.getElementById('age').value = ""; // Limpiar el campo de edad
+            document.getElementById('country').value = "México"; // Restablecer el combo a "México"
+            document.getElementById('sueldo_mensual').value = "";
+            document.getElementById('sueldo_anual').value = "";
+        }
+    </script>
+</body>
+</html>

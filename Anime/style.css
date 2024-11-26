@@ -1,0 +1,28 @@
+body{
+    background-image: url("img/fondo_naruto.jpg");
+    margin: 0;
+}
+.contenedor_cuerpo{
+    margin: 50px
+}
+
+header{
+    background-color: #f2fafc;
+    margin-top: 0;
+    text-align: center;
+}
+
+img{
+    width: 300px;
+    float: left;
+}
+.contenedor_video{
+    text-align: center;
+}
+
+footer{
+    background-color: black;
+    height: 300x;
+    color: white;
+    text-align: center;
+}

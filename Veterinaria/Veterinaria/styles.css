@@ -1,0 +1,214 @@
+/* styles.css */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+nav ul li:hover {
+    background-color: #007bff;
+}
+
+#content {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido de la sección */
+}
+
+#bienvenida img {
+    width: 40%; /* Controla el tamaño de la imagen */
+    max-width: 300px; /* Añade un máximo para evitar que la imagen sea demasiado grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 20px; /* Añade un margen entre la imagen y el texto */
+}
+
+#bienvenida {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido dentro de la sección */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+}
+
+#vaccine-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px auto; /* Centra el formulario horizontalmente */
+    border-radius: 8px;
+    display: flex; /* Usamos flexbox para centrar verticalmente */
+    flex-direction: column; /* Los elementos internos se alinean en una columna */
+    align-items: center; /* Alineación horizontal al centro */
+    justify-content: center; /* Alineación vertical al centro */
+    max-width: 500px; /* Establece un ancho máximo para el formulario */
+}
+
+#vaccine-form h2 {
+    color: #0056b3;
+    text-align: center; /* Centra el texto del encabezado */
+}
+
+#vaccine-form form {
+    width: 100%; /* Asegura que el formulario use todo el ancho del contenedor */
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna para los elementos del formulario */
+    gap: 10px;
+}
+
+#vaccine-form label {
+    align-self: start; /* Alinea los labels al inicio de la columna */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#vaccine-form input, #vaccine-form select, #vaccine-form button {
+    width: 100%; /* Asegura que los inputs y el botón ocupen todo el ancho disponible */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#vaccine-form button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#vaccine-form button:hover {
+    background-color: #007bff;
+}
+
+.parallax {
+    /* Asigna tu imagen de fondo en esta línea */
+    background-image: url('lavado.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 20px;
+}
+
+#wash-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para mejorar la legibilidad */
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario en la página */
+    padding: 20px;
+}
+
+#wash-form h2 {
+    text-align: center;
+    color: #0056b3;
+}
+
+#wash-form form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#wash-form label {
+    font-weight: bold;
+}
+
+#wash-form input, #wash-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#wash-form button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#wash-form button:hover {
+    background-color: #007bff;
+}
+
+.parallax {
+    /* Asigna tu imagen de fondo en esta línea */
+    background-image: url('path-to-your-care-background-image.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 20px;
+}
+
+#care-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para mejorar la legibilidad */
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario en la página */
+    padding: 20px;
+}
+
+#care-form h2 {
+    text-align: center;
+    color: #0056b3;
+}
+
+#care-form form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#care-form label {
+    font-weight: bold;
+}
+
+#care-form input, #care-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#care-form button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#care-form button:hover {
+    background-color: #007bff;
+}
+
+

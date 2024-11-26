@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - Tienda de Computadoras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Punto de Venta - Tienda de Computadoras</h1>
+    <!-- Categoría de Productos -->
+    <label for="categorySelect">Categoría:</label>
+    <select id="categorySelect">
+        <option value="all">Todos</option>
+        <option value="laptops">Laptops</option>
+        <option value="desktops">Desktops</option>
+        <option value="accesorios">Accesorios</option>
+    </select>
+
+    <!-- Lista de productos -->
+    <div class="products" id="productsList">
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Imagen</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="product" data-category="laptops" data-name="Laptop Gaming" data-price="1500">
+                    <td>Laptop Gaming</td>
+                    <td><img src="img/laptop_gamer.jpg" alt="Laptop Gaming"></td>
+                    <td>$40000</td>
+                    <td><input type="number" min="1" value="1" class="quantity"></td>
+                    <td><button onclick="addToCart('Laptop Gaming', 40000, event)">Agregar al Carrito</button></td>
+                </tr>
+                <tr class="product" data-category="laptops" data-name="Laptop Gaming" data-price="1500">
+                    <td>Laptop office</td>
+                    <td><img src="img/laptop_office.jpg" alt="Laptop Gaming"></td>
+                    <td>$22000</td>
+                    <td><input type="number" min="1" value="1" class="quantity"></td>
+                    <td><button onclick="addToCart('Laptop Gaming', 22000, event)">Agregar al Carrito</button></td>
+                </tr>
+                <tr class="product" data-category="desktops" data-name="Desktop Office" data-price="800">
+                    <td>Escritorio Office</td>
+                    <td><img src="img/escritorio.jpeg" alt="Desktop Office"></td>
+                    <td>$12000</td>
+                    <td><input type="number" min="1" value="1" class="quantity"></td>
+                    <td><button onclick="addToCart('Desktop Office', 12000, event)">Agregar al Carrito</button></td>
+                </tr>
+                <tr class="product" data-category="desktops" data-name="Desktop Office" data-price="800">
+                    <td>Escritorio gamer</td>
+                    <td><img src="img/escritorio_gamer.jpg" alt="Desktop Office"></td>
+                    <td>$20000</td>
+                    <td><input type="number" min="1" value="1" class="quantity"></td>
+                    <td><button onclick="addToCart('Desktop Office', 20000, event)">Agregar al Carrito</button></td>
+                </tr>
+                <tr class="product" data-category="accesorios" data-name="Mouse Inalámbrico" data-price="30">
+                    <td>Mouse Inalámbrico</td>
+                    <td><img src="img/mouse.jpeg" alt="Mouse Inalámbrico"></td>
+                    <td>$1600</td>
+                    <td><input type="number" min="1" value="1" class="quantity"></td>
+                    <td><button onclick="addToCart('Mouse Inalámbrico', 1600, event)">Agregar al Carrito</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cartItems"></ul>
+        <p id="total">Total: $0</p>
+        <button onclick="clearCart()">Vaciar Carrito</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
